@@ -1,0 +1,49 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module", //模块开发
+    "ecmaVersion": 6, //For ES6 syntax
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
+      "legacyDecorators": true
+    }
+  },
+  "globals": {
+
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "mocha": true
+  },
+  "extends": ["eslint:recommended", "eslint-config-ali/react"],
+  "rules": {
+    "strict": "error",
+    "eqeqeq": "error",
+    "semi": ["error", "never"],
+    "no-lone-blocks": "error",
+    "no-lonely-if": "error",
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "no-param-reassign": "error",
+    "no-spaced-func": "error",
+    "no-use-before-define": "warn",
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }],
+    "no-with": "error",
+    "default-case": "error",
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "generator-star-spacing": ["error", { "before": true, "after": false }],
+    "no-restricted-globals": "off",
+    "array-callback-return": "off",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["info", "warn", "error", "time", "timeEnd"]
+      }
+    ],
+    "react/react-in-jsx-scope": "warn"
+  }
+}
