@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types'
 import { Button, Row, Input, Form } from 'antd';
-import { GlobalFooter } from '@components';
+// import { GlobalFooter } from '@components'
 // import { GithubOutlined } from '@ant-design/icons'
 
 import styles from './index.less';
@@ -44,7 +44,7 @@ const config = {
   },
 };
 
-function Login(props) {
+function Login() {
   // const { dispatch, loading, i18n } = props
 
   // const handleOk = values => {
@@ -79,9 +79,7 @@ function Login(props) {
         </div>
         <Form>
           <FormItem name="username" rules={[{ required: true }]} hasFeedback>
-            <Input
-            // placeholder={i18n._(t`Username`)}
-            />
+            <Input />
           </FormItem>
           <FormItem name="password" rules={[{ required: true }]} hasFeedback>
             <Input
