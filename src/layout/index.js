@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { ConfigProvider } from 'antd';
-import zh_CN from 'antd/es/locale/zh_CN';
-import en_US from 'antd/lib/locale-provider/en_US';
+import React, { useState } from 'react'
+import { ConfigProvider } from 'antd'
+import zh_CN from 'antd/es/locale/zh_CN'
+import en_US from 'antd/lib/locale-provider/en_US'
 import {
   IntlProvider,
   FormattedMessage,
-} from 'react-intl'; /* react-intl imports */
+} from 'react-intl' /* react-intl imports */
 // import en from '@/locale/en'
-import zh from '@/locale/zh';
+import zh from '@/locale/zh'
 
 const languages = {
   zh: zh_CN,
   en: en_US,
-};
+}
 function Layout() {
-  const [language] = useState('zh');
+  const [language] = useState('zh')
   return (
     <ConfigProvider locale={languages[language]}>
       <IntlProvider locale={'zh'} messages={zh}>
@@ -29,7 +29,7 @@ function Layout() {
         </section>
       </IntlProvider>
     </ConfigProvider>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

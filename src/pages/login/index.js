@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
 // import PropTypes from 'prop-types'
-import { Button, Row, Input, Form } from 'antd';
+import { Button, Row, Input, Form } from 'antd'
 // import { GlobalFooter } from '@components'
 // import { GithubOutlined } from '@ant-design/icons'
 
-import styles from './index.less';
+import styles from './index.less'
 
-const FormItem = Form.Item;
+const FormItem = Form.Item
 
 const config = {
   siteName: 'Yanlei Admin',
@@ -42,7 +42,7 @@ const config = {
     ],
     defaultLanguage: 'en',
   },
-};
+}
 
 function Login() {
   // const { dispatch, loading, i18n } = props
@@ -84,14 +84,14 @@ function Login() {
           <FormItem name="password" rules={[{ required: true }]} hasFeedback>
             <Input
               type="password"
-              // placeholder={i18n._(t`Password`)}
+            // placeholder={i18n._(t`Password`)}
             />
           </FormItem>
           <Row>
             <Button
               type="primary"
               htmlType="submit"
-              // loading={loading.effects.login}
+            // loading={loading.effects.login}
             >
               {/* <Trans>Sign in</Trans> */}
             </Button>
@@ -112,13 +112,13 @@ function Login() {
         <GlobalFooter links={footerLinks} copyright={config.copyright} />
       </div> */}
     </Fragment>
-  );
+  )
 }
 
 Login.propTypes = {
   // form: PropTypes.object,
   // dispatch: PropTypes.func,
   // loading: PropTypes.object,
-};
+}
 
-export default Login;
+export default Login
