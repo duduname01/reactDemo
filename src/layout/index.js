@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ConfigProvider } from 'antd';
 import zh_CN from 'antd/es/locale/zh_CN';
 import en_US from 'antd/lib/locale-provider/en_US';
@@ -6,7 +6,7 @@ import {
   IntlProvider,
   FormattedMessage,
 } from 'react-intl'; /* react-intl imports */
-import en from '@/locale/en';
+// import en from '@/locale/en'
 import zh from '@/locale/zh';
 
 const languages = {
