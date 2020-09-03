@@ -36,17 +36,9 @@ export async function request(url, method = 'post', params = '') {
       requestUrl = httpsUrl + url;
     }
   }
-  // const token = getToken()
-  // const org = getOrg() || {}
   const headers = {
-    // authorization: token,
     'Content-Type': 'application/json',
   };
-  // if (org.id) {
-  //   headers['x-orgId'] = org.id
-  // } else if (params.orgId) {
-  //   headers['x-orgId'] = params.orgId
-  // }
   const options = {
     headers,
     method,
@@ -62,10 +54,6 @@ export async function request(url, method = 'post', params = '') {
   }
 
   const response = await fetch(requestUrl, options);
-  // const result = response.headers.get('x-token')
-  // if (result) {
-  //   setToken(result)
-  // }
   checkStatus(response);
   try {
     const data = await response.json();
@@ -93,10 +81,9 @@ export async function userLogin(url, method, params) {
   }
   const response = await fetch(url, options);
   checkStatus(response);
-  // setToken(response.headers.get('x-token'))
   const data = await response.json();
 
   return data;
 }
 
-export const httpsUrl = `https://www.baidu.com`;
+export const httpsUrl = 'https://www.baidu.com';

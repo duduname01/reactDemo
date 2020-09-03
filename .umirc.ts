@@ -6,15 +6,17 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/', component: '@/pages/index' },
+    { path: '/', component: '@/layout' },
     { path: '/aa', component: '@/pages/logging' },
+    { component: '@/pages/404' },
   ],
   alias: {
     '@api': path.resolve(__dirname, 'src/api'),
     '@assets': path.resolve(__dirname, 'src/assets'),
-    '@component': path.resolve(__dirname, 'src/component'),
+    '@components': path.resolve(__dirname, 'src/components'),
     '@layout': path.resolve(__dirname, 'src/layout'),
     '@util': path.resolve(__dirname, 'src/util'),
     '@models': path.resolve(__dirname, 'src/models'),
+    themes: path.resolve(__dirname, 'src/themes'),
   },
 });
