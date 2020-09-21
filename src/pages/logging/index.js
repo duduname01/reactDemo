@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { setLogin } from '@util/tools';
-import { friendList, useFriendStatus } from './constant';
-import style from './index.less';
+import React, { useState, useEffect } from 'react'
+import { setLogin } from '@utils/tools'
+import { friendList, useFriendStatus } from './constant'
+import style from './index.less'
 
 function Logging() {
-  const [title, settitle] = useState('日志记录');
-  const [count, setcount] = useState(0);
-  const [recipientID, setRecipientID] = useState(1);
-  const isRecipientOnline = useFriendStatus(recipientID); // 自定义Hook
+  const [title, settitle] = useState('日志记录')
+  const [count, setcount] = useState(0)
+  const [recipientID, setRecipientID] = useState(1)
+  const isRecipientOnline = useFriendStatus(recipientID) // 自定义Hook
 
   useEffect(() => {
-    setLogin();
-  }, []);
+    setLogin()
+  }, [])
 
   const handleTitle = () => {
     if (Object.is(count % 2, 0)) {
-      settitle('建立连接');
+      settitle('建立连接')
     } else {
-      settitle('日志记录');
+      settitle('日志记录')
     }
-    setcount(re => re + 1);
-  };
+    setcount(re => re + 1)
+  }
   return (
     <div>
       <h1 className={style.cur} onClick={handleTitle}>
@@ -39,6 +39,6 @@ function Logging() {
         ))}
       </select>
     </div>
-  );
+  )
 }
-export default Logging;
+export default Logging

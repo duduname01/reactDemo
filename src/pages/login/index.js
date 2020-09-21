@@ -1,117 +1,48 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { Button, Row, Input, Form } from 'antd'
+import { UserOutlined, LockOutlined } from '@ant-design/icons'
 // import { GlobalFooter } from '@components'
-// import { GithubOutlined } from '@ant-design/icons'
 
 import styles from './index.less'
 
-const FormItem = Form.Item
-
-const config = {
-  siteName: 'Yanlei Admin',
-  copyright: 'Ant Design Admin  ©2020 zuiidea',
-  logoPath: '/logo.svg',
-  apiPrefix: '/api/v1',
-  fixedHeader: true, // sticky primary layout header
-  layouts: [
-    {
-      name: 'primary',
-      include: [/.*/],
-      exclude: [/(\/(en|zh))*\/login/],
-    },
-  ],
-
-  i18n: {
-    languages: [
-      {
-        key: 'pt-br',
-        title: 'Português',
-        flag: '/portugal.svg',
-      },
-      {
-        key: 'en',
-        title: 'English',
-        flag: '/america.svg',
-      },
-      {
-        key: 'zh',
-        title: '中文',
-        flag: '/china.svg',
-      },
-    ],
-    defaultLanguage: 'en',
-  },
-}
 
 function Login() {
-  // const { dispatch, loading, i18n } = props
-
-  // const handleOk = values => {
-  //   dispatch({ type: 'login/login', payload: values })
-  // }
-  // let footerLinks = [
-  //   {
-  //     key: 'github',
-  //     title: <GithubOutlined />,
-  //     href: 'https://github.com/zuiidea/antd-admin',
-  //     blankTarget: true,
-  //   },
-  // ]
-
-  // if (config.i18n) {
-  //   footerLinks = footerLinks.concat(
-  //     config.i18n.languages.map(item => ({
-  //       key: item.key,
-  //       title: (
-  //         <span onClick={setLocale.bind(null, item.key)}>{item.title}</span>
-  //       ),
-  //     }))
-  //   )
-  // }
-
   return (
-    <Fragment>
-      <div className={styles.form}>
-        <div className={styles.logo}>
-          <img alt="logo" src={config.logoPath} />
-          <span>{config.siteName}</span>
-        </div>
+    <div className={styles.login} id="login">
+      <div className={styles.title_section}>
+        <div>电梯物联网安全公共信息服务平台</div>
+        <div>Elevator IOT Public Service System</div>
+      </div>
+      <div className={styles.login_box}>
+        <div className={styles.logo}>公共信息服务平台</div>
         <Form>
-          <FormItem name="username" rules={[{ required: true }]} hasFeedback>
-            <Input />
-          </FormItem>
-          <FormItem name="password" rules={[{ required: true }]} hasFeedback>
+          <Form.Item>
             <Input
-              type="password"
-            // placeholder={i18n._(t`Password`)}
+              prefix={<UserOutlined />}
+              placeholder="用户名"
             />
-          </FormItem>
-          <Row>
+          </Form.Item>
+          <Form.Item>
+            <Input
+              prefix={<LockOutlined />}
+              type="password"
+              placeholder="密码"
+            />
+          </Form.Item>
+          <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
-            // loading={loading.effects.login}
-            >
-              {/* <Trans>Sign in</Trans> */}
+              className={styles.login_form_button}
+              onClick={() => {
+              }}
+            >登 录
             </Button>
-            <p>
-              <span className="margin-right">
-                {/* <Trans>Username</Trans> */}
-                ：guest
-              </span>
-              <span>
-                {/* <Trans>Password</Trans> */}
-                ：guest
-              </span>
-            </p>
-          </Row>
+          </Form.Item>
         </Form>
       </div>
-      {/* <div className={styles.footer}>
-        <GlobalFooter links={footerLinks} copyright={config.copyright} />
-      </div> */}
-    </Fragment>
+    </div>
   )
 }
 

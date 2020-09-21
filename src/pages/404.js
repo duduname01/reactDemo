@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FrownOutlined } from '@ant-design/icons'
 import { Page } from '@components'
-import styles from './404.less'
 
 function Error() {
   const [loading, setloading] = useState(true)
@@ -12,7 +11,7 @@ function Error() {
   }, [])
   return (
     <Page inner loading={loading}>
-      <div className={styles.error}>
+      <div className="error">
         <FrownOutlined />
         <h1>404 Not Found</h1>
       </div>
